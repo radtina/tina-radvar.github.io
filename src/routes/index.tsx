@@ -82,7 +82,6 @@ const timeline = [
 function Portfolio() {
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <FloatingSoot />
       <Nav />
       <Hero />
       <About />
@@ -112,7 +111,7 @@ function Nav() {
         </nav>
         <a
           href="#contact"
-          className="font-pixel text-[9px] bg-sunset text-cream px-3 py-2 pixel-border-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+          className="font-pixel text-[8px] sm:text-[9px] bg-sunset text-cream px-2.5 sm:px-3 py-2 pixel-border-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
         >
           SAY HI
         </a>
@@ -123,8 +122,8 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative">
-      <div className="relative h-[78vh] min-h-[560px] overflow-hidden border-b-[4px] border-ink">
+    <section id="top" className="relative scroll-mt-36 sm:scroll-mt-40">
+      <div className="relative h-[88vh] lg:h-[78vh] min-h-[640px] lg:min-h-[560px] overflow-hidden border-b-[4px] border-ink">
         <img
           src={heroPixel}
           alt="Pixel art of a figure coding under a great tree at sunset"
@@ -149,39 +148,39 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 h-full flex flex-col justify-end pb-16 sm:pb-24">
-          <div className="inline-flex items-center gap-2 font-display text-xl text-ink bg-cream pixel-border-sm px-3 py-1 w-fit mb-5">
+        <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 lg:px-10 h-full flex flex-col justify-start pt-8 sm:pt-8 lg:pt-8 pb-12 sm:pb-24">
+          <div className="inline-flex items-center gap-2 font-display text-lg sm:text-xl text-ink bg-cream pixel-border-sm px-2.5 sm:px-3 py-1 w-fit mb-3 sm:mb-4">
             <span className="size-2 bg-sunset animate-pixel-shimmer" />
             currently shipping AI at Mercedes-Benz R&D
           </div>
-          <h1 className="font-pixel text-[24px] sm:text-5xl md:text-6xl text-cream text-pixel-shadow leading-[1.3] max-w-3xl">
+          <h1 className="font-pixel text-[20px] sm:text-4xl md:text-5xl lg:text-6xl text-cream text-pixel-shadow leading-[1.35] sm:leading-[1.3] max-w-3xl mt-0.5 sm:mt-1">
             I TEACH<br />MACHINES TO<br />
             <span className="text-sunset">REMEMBER WELL.</span>
             <span className="inline-block w-3 h-[1em] bg-cream ml-2 align-middle animate-blink-cursor" />
           </h1>
-          <p className="mt-6 max-w-xl font-body text-base sm:text-lg text-ink bg-cream/95 pixel-border-sm px-4 py-3">
+          <p className="mt-6 sm:mt-7 max-w-xl font-body text-[15px] sm:text-lg text-ink bg-cream/95 pixel-border-sm px-4 py-3">
             I'm <strong className="text-sunset">Tina</strong> — an AI engineer with a mechatronics
             background and a soft spot for systems that quietly do the right
             thing. I wrote my master's thesis at <strong>Mercedes-Benz R&amp;D</strong>
             {" "}on hybrid RAG and fine-tuned LLMs for engineering knowledge, in collaboration with Uni Stuttgart.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-7 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
             <a
               href="#work"
-              className="font-pixel text-[10px] sm:text-xs bg-moss text-cream px-5 py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
+              className="font-pixel text-[9px] sm:text-xs bg-moss text-cream px-4 sm:px-5 py-3.5 sm:py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
             >
               ▶ SEE MY WORK
             </a>
             <a
               href="mailto:radvar.tina41@gmail.com"
-              className="font-pixel text-[10px] sm:text-xs bg-cream text-ink px-5 py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
+              className="font-pixel text-[9px] sm:text-xs bg-cream text-ink px-4 sm:px-5 py-3.5 sm:py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
             >
               ✉ EMAIL ME
             </a>
             <a
               href="/cv.pdf"
               download
-              className="font-pixel text-[10px] sm:text-xs bg-sunset text-cream px-5 py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
+              className="font-pixel text-[9px] sm:text-xs bg-sunset text-cream px-4 sm:px-5 py-3.5 sm:py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
             >
               ↓ CV
             </a>
@@ -203,33 +202,9 @@ function PixelCloud({ small = false }: { small?: boolean }) {
   );
 }
 
-function FloatingSoot() {
-  return (
-    <div className="fixed inset-0 pointer-events-none z-30 overflow-hidden">
-      {[
-        { left: "8%", delay: "0s", size: 14 },
-        { left: "22%", delay: "-3s", size: 10 },
-        { left: "85%", delay: "-6s", size: 16 },
-        { left: "70%", delay: "-1s", size: 12 },
-      ].map((s, i) => (
-        <div
-          key={i}
-          className="absolute bottom-10 animate-soot-bob"
-          style={{ left: s.left, animationDelay: s.delay, width: s.size, height: s.size }}
-        >
-          <div className="w-full h-full rounded-full bg-soot relative">
-            <div className="absolute top-1 left-1 w-1 h-1 bg-cream rounded-full" />
-            <div className="absolute top-1 right-1 w-1 h-1 bg-cream rounded-full" />
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 function About() {
   return (
-    <section id="about" className="py-24 sm:py-32 bg-cream relative">
+    <section id="about" className="py-24 sm:py-32 bg-cream relative scroll-mt-20 sm:scroll-mt-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 grid md:grid-cols-[1fr_2fr] gap-12 items-center">
         <div className="relative">
           <div className="bg-sky pixel-border-lg p-4 inline-block animate-float-pixel">
@@ -310,7 +285,7 @@ function Projects() {
   return (
     <section
       id="work"
-      className="py-24 sm:py-32 bg-muted border-y-[4px] border-ink scanlines"
+      className="py-24 sm:py-32 bg-muted border-y-[4px] border-ink scanlines scroll-mt-20 sm:scroll-mt-24"
     >
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
@@ -323,7 +298,7 @@ function Projects() {
           <div className="font-display text-xl text-ink/70">[ thesis + side quests ]</div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((p) => (
             <a
               key={p.title}
@@ -371,13 +346,13 @@ function Projects() {
 
 function Experience() {
   return (
-    <section id="journey" className="py-24 sm:py-32 bg-cream">
+    <section id="journey" className="py-24 sm:py-32 bg-cream scroll-mt-20 sm:scroll-mt-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="font-display text-xl text-moss mb-2">// journey.log</div>
         <h2 className="font-pixel text-2xl sm:text-4xl text-ink mb-12">
           THE<br />JOURNEY
         </h2>
-        <ol className="relative border-l-[3px] border-ink pl-6 sm:pl-8 space-y-10">
+        <ol className="relative border-l-[3px] border-ink pl-5 sm:pl-8 space-y-9 sm:space-y-10">
           {timeline.map((t) => (
             <li key={t.when} className="relative">
               <span className="absolute -left-[34px] sm:-left-[42px] top-1 size-4 bg-sunset pixel-border-sm" />
@@ -395,8 +370,8 @@ function Experience() {
 
 function Skills() {
   return (
-    <section id="skills" className="py-24 sm:py-32 bg-muted border-y-[4px] border-ink scanlines">
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 grid md:grid-cols-2 gap-12">
+    <section id="skills" className="py-24 sm:py-32 bg-muted border-y-[4px] border-ink scanlines scroll-mt-20 sm:scroll-mt-24">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 grid md:grid-cols-2 gap-10 sm:gap-12">
         <div>
           <div className="font-display text-xl text-ink/70 mb-2">// stats.json</div>
           <h2 className="font-pixel text-2xl sm:text-4xl text-ink mb-6">
@@ -445,7 +420,7 @@ function Skills() {
 
 function Contact() {
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-gradient-moss text-cream relative overflow-hidden">
+    <section id="contact" className="py-24 sm:py-32 bg-gradient-moss text-cream relative overflow-hidden scroll-mt-20 sm:scroll-mt-24">
       <div className="absolute inset-0 scanlines opacity-50" />
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 text-center">
         <div className="font-display text-xl text-cream/70 mb-2">// open_inbox()</div>
@@ -457,10 +432,10 @@ function Contact() {
           Open to AI engineering roles in Germany & remote — RAG, LLM
           fine-tuning, agentic systems, or full-stack ML. Always up for a chat.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
           <a
             href="mailto:radvar.tina41@gmail.com"
-            className="font-pixel text-[10px] sm:text-xs bg-cream text-ink px-5 py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
+            className="font-pixel text-[9px] sm:text-xs bg-cream text-ink px-4 sm:px-5 py-3.5 sm:py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
           >
             ✉ RADVAR.TINA41@GMAIL.COM
           </a>
@@ -468,7 +443,7 @@ function Contact() {
             href="https://github.com/tinaradvar"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-pixel text-[10px] sm:text-xs bg-sunset text-cream px-5 py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
+            className="font-pixel text-[9px] sm:text-xs bg-sunset text-cream px-4 sm:px-5 py-3.5 sm:py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
           >
             ⌨ GITHUB
           </a>
@@ -476,14 +451,14 @@ function Contact() {
             href="https://www.linkedin.com/in/tinaradvar"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-pixel text-[10px] sm:text-xs bg-forest text-cream px-5 py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
+            className="font-pixel text-[9px] sm:text-xs bg-forest text-cream px-4 sm:px-5 py-3.5 sm:py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
           >
             in LINKEDIN
           </a>
           <a
             href="/cv.pdf"
             download
-            className="font-pixel text-[10px] sm:text-xs bg-cream text-ink px-5 py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
+            className="font-pixel text-[9px] sm:text-xs bg-cream text-ink px-4 sm:px-5 py-3.5 sm:py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
           >
             ↓ DOWNLOAD CV
           </a>
