@@ -440,7 +440,7 @@ function Contact() {
             ✉ RADVAR.TINA41@GMAIL.COM
           </a>
           <a
-            href="https://github.com/tinaradvar"
+            href="https://github.com/radtina"
             target="_blank"
             rel="noopener noreferrer"
             className="font-pixel text-[9px] sm:text-xs bg-sunset text-cream px-4 sm:px-5 py-3.5 sm:py-4 pixel-border hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
